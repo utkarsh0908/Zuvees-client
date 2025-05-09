@@ -33,7 +33,7 @@ export default function RiderOrdersPage() {
 
   const fetchOrders = async (riderId) => {
     try {
-      const res = await fetch(`${NEXT_PUBLIC_API_BASE_URL}/api/rider/orders?riderId=${riderId}`);
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/rider/orders?riderId=${riderId}`);
       if (!res.ok) throw new Error('Failed to fetch orders');
       const data = await res.json();
       setOrders(data);
@@ -54,7 +54,7 @@ export default function RiderOrdersPage() {
     if (!newStatus) return;
 
     try {
-      const res = await fetch(`${NEXT_PUBLIC_API_BASE_URL}/api/rider/orders/${orderId}/status`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/rider/orders/${orderId}/status`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: newStatus }),

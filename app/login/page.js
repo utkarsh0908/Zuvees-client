@@ -19,7 +19,7 @@ const LoginPage = () => {
       const result = await signInWithPopup(auth, provider);
       const idToken = await result.user.getIdToken();
 
-      const res = await fetch(`${NEXT_PUBLIC_API_BASE_URL}/api/auth/google`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/auth/google`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${idToken}`,

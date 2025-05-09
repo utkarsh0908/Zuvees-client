@@ -62,7 +62,7 @@ export default function CartPage() {
     };
 
     try {
-      const response = await fetch(`${NEXT_PUBLIC_API_BASE_URL}/api/orders`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/orders`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
