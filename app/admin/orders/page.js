@@ -2,8 +2,8 @@ import AdminOrdersPage from '~/components/AdminPage';
 
 async function getOrdersAndRiders() {
   const [ordersRes, ridersRes] = await Promise.all([
-    fetch('http://localhost:3001/api/admin/orders'),
-    fetch('http://localhost:3001/api/admin/riders')
+    fetch(`${NEXT_PUBLIC_API_BASE_URL}/api/admin/orders`),
+    fetch(`${NEXT_PUBLIC_API_BASE_URL}/api/admin/riders`)
   ]);
 
   if (!ordersRes.ok || !ridersRes.ok) {

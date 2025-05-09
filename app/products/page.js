@@ -3,7 +3,7 @@ import { Container, Grid, Typography } from "@mui/material";
 
 async function getProducts() {
   try {
-    const res = await fetch("http://localhost:3001/api/products");
+    const res = await fetch(`${NEXT_PUBLIC_API_BASE_URL}/api/products`);
     if (!res.ok) throw new Error('Failed to fetch products');
     return res.json();
   } catch (e) {

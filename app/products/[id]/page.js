@@ -5,7 +5,7 @@ export default async function ProductPage({ params }) {
 
   let product = {};
   try {
-    const res = await fetch(`http://localhost:3001/api/products/${id}`);
+    const res = await fetch(`${NEXT_PUBLIC_API_BASE_URL}/api/products/${id}`);
     product = await res.json();
   } catch(e) {
     console.log(e);
