@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import AdminOrdersPage from '~/components/AdminPage';
 
 async function getOrdersAndRiders() {
